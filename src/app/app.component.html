@@ -1,7 +1,14 @@
 <div class="container">
-  <!--Interprets logic -->
+  <!--Outer Layer of our component -->
 
+  <!-- Header: includes the top of the component (Task-Tracker) and the button -->
   <app-header></app-header>
+
+  <!-- Router is relative to which route we're on. If on empty route path, renders Tasks Component,
+  If on /about route, renders About component -->
   <router-outlet></router-outlet>
+
+  <!-- Includes the copyright and the About button, which routes the page to /about,
+  Rendering the about component -->
   <app-footer></app-footer>
 </div>

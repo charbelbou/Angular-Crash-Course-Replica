@@ -10,19 +10,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-task.component.css'],
 })
 export class AddTaskComponent implements OnInit {
+  // Event emitter passed in from parent component.
+  // Once it gets emitted, triggers AddTask(event) function in Tasks component.
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
 
+  // Boolean which determines whether form is visible or not.
   showAddTask: boolean = false;
   subscription: Subscription;
+
+  // Booleans concerning validation errors.
   error1: boolean = false;
   error2: boolean = false;
 
+  // Initalizes subscription to onToggle, concerning the visibility of add task form (showAddTask).
   constructor(private uiService: UiService) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
   }
 
+  // Form group, consisting of text, day and reminder fields with required validators.
   contactForm = new FormGroup({
     text: new FormControl(null, Validators.required),
     day: new FormControl(null, Validators.required),
@@ -31,9 +38,12 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Once component is destroyed, unsubscribed.
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  // Gets triggered on submit, validates input fields, emits onAddTask event which triggers addTask(event).
   onSubmit() {
     const newTask = {
       text: this.contactForm.value.text,

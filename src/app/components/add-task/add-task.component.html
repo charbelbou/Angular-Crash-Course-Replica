@@ -1,3 +1,9 @@
+<!-- Form for adding a task -->
+<!-- Form appears only if toggled (ngIf showAddTask)  -->
+<!-- onSubmit() once form is submitted -->
+<!-- Form control group "contactForm", consists of Text, Day, and Reminder fields -->
+<!-- two <p> elements, appear only if error occurs -->
+
 <form
   *ngIf="showAddTask"
   (ngSubmit)="onSubmit()"

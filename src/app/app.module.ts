@@ -14,12 +14,14 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+// Routes
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
   { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
+  //Component declarations
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -30,6 +32,7 @@ const appRoutes: Routes = [
     AboutComponent,
     FooterComponent,
   ],
+  //Module imports
   imports: [
     BrowserModule,
     FontAwesomeModule,
@@ -38,7 +41,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     ReactiveFormsModule,
   ],
+  // Services that become available in all parts of app
   providers: [],
+  // Bootstrapped component
   bootstrap: [AppComponent],
 })
 export class AppModule {}
