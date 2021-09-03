@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  ngOnDestory() {
+    this.subscription.unsubscribe();
+  }
+
   toggleAddTask() {
     this.uiService.toggleAddTask();
   }
