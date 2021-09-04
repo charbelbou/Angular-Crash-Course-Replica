@@ -1,3 +1,11 @@
+<!-- Html Header -->
+<!-- h1 title, which is established in class -->
+<!-- app-button (Custom component), which renders/hides the add form -->
+<!-- app-button is only visible if in '/' route -->
+<!-- Color and Text are relative to whether form is already visible or not (showAddTask) -->
+<!-- btnClick is an event emitter, once emitted in app-button component, it triggers ToggleAddTask() -->
+<!-- ToggleAddTask() inverts showAddTask boolean, which changes color and text. -->
+
 <header>
   <h1>{{ title }}</h1>
   <app-button
