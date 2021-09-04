@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  // title, used in <h1>
   title = 'Task-Tracker';
 
   // Boolean which determines whether form is visible or not.
@@ -35,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   // Checks whether the current route is equal to the route that's passed in the parameter
   // Used to determine whether the button should be visible (Should be visible if on '/' route),
-  // As we don't want the button to be visible when on the about page (/about)
+  // as we don't want the button to be visible when on the about page (/about)
   hasRoute(route: string) {
     return this.router.url === route;
   }

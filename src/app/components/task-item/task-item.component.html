@@ -1,3 +1,11 @@
+<!-- ngClass: applys 'reminder' class depending on task.reminder -->
+<!-- if task.reminder true, renders green border on the left of div, indicating the reminder -->
+<!-- dblclick (Double CLick), when div is double clicked, triggers onToggle(task) -->
+
+<!-- <h3> has task's title, and 'delete' icon. (fa-icon) -->
+<!-- When icon is clicked, triggers onDelte(task), which deletes it through API -->
+<!-- <p> has task's date -->
+
 <div
   [ngClass]="{ reminder: task.reminder }"
   class="task"

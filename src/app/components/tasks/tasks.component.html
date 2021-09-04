@@ -1,3 +1,9 @@
+<!-- Consists of two custom components: add-task and task-items -->
+<!-- add-task, passes event emitter which triggers addTask once emitted -->
+
+<!-- ngFor over 'task-item' for each task in tasks array. -->
+<!-- Two event emitters, one for deleteTask, another for toggleReminder -->
+
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 <app-task-item
   *ngFor="let task of tasks"
